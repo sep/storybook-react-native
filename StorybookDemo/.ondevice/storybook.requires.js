@@ -30,10 +30,7 @@ try {
 } catch {}
 
 const getStories = () => {
-  return [
-    require("../components/atoms/PrimaryButton/PrimaryButton.stories.tsx"),
-    require("../components/atoms/secondaryButton/SecondaryButton.stories.tsx"),
-  ];
+  return [require("../components/atoms/Button/Button.stories.tsx")];
 };
 
 configure(getStories, module, false);
