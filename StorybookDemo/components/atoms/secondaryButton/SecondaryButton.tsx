@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import colors from '../../theme';
 
 export type ButtonProps = {
   onPress: () => void;
@@ -13,12 +14,13 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     borderRadius: 4,
+    borderColor: colors.blueLight,
     alignSelf: 'flex-start',
     flexGrow: 0,
-    backgroundColor: 'purple',
+    backgroundColor: colors.white
   },
   buttonText: {
-    color: 'white',
+    color: colors.blueLight,
     fontSize: 16,
     fontWeight: 'bold',
   },
@@ -28,7 +30,8 @@ const styles = StyleSheet.create({
   },
 });
 
-export const MyButton = ({text, onPress, color, textColor}: ButtonProps) => (
+export function SecondaryButton({text, onPress, color, textColor}: ButtonProps) {
+  return (
   <View style={styles.buttonContainer}>
     <TouchableOpacity
       style={[styles.button, !!color && {backgroundColor: color}]}
@@ -39,4 +42,5 @@ export const MyButton = ({text, onPress, color, textColor}: ButtonProps) => (
       </Text>
     </TouchableOpacity>
   </View>
-);
+  )
+}
