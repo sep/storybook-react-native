@@ -1,4 +1,5 @@
 import {NativeBaseProvider, Center} from 'native-base'
+import {View} from 'react-native'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -13,9 +14,11 @@ export const parameters = {
 export const decorators = [
   Story => (
     <NativeBaseProvider>
-      <Center>
-        <Story/>
-      </Center>
+      <View style={{ justifyContent: 'center', alignItems:'center', flex: 1 }}>
+        <Center>
+          <Story />
+        </Center>
+      </View>
     </NativeBaseProvider>
   ),
 ]
