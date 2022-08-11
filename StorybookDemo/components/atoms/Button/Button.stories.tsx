@@ -1,27 +1,19 @@
+// stories/MyButton.stories.tsx
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {PrimaryButton, SecondaryButton} from './Button';
+
+import {MyButton} from './Button';
 
 export default {
-  title: 'components/Button',
-  component: PrimaryButton,
-  subcomponents: {SecondaryButton},
-} as ComponentMeta<typeof PrimaryButton>;
+  title: 'components/MyButton',
+  component: MyButton,
+} as ComponentMeta<typeof MyButton>;
 
-export const Primary: ComponentStory<typeof PrimaryButton> = args => (
-  <PrimaryButton {...args} />
+export const Basic: ComponentStory<typeof MyButton> = args => (
+  <MyButton {...args} />
 );
 
-Primary.args = {
-  onPress: () => console.log('Hello Button'),
-  text: 'Primary Button',
-};
-
-export const Secondary: ComponentStory<typeof SecondaryButton> = args => (
-  <PrimaryButton {...args} />
-);
-
-Secondary.args = {
-  onPress: () => console.log('Hello Button'),
-  text: 'Secondary Button',
+Basic.args = {
+  text: 'Hello World',
+  color: 'purple',
 };
