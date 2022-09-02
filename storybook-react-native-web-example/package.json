@@ -9,7 +9,7 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build -s ./stories/assets"
+    "build-storybook": "build-storybook -o storybook-build -s ./src/components/assets"
   },
   "dependencies": {
     "@expo/html-elements": "^0.1.0",
