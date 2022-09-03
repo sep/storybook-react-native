@@ -1,6 +1,10 @@
 name: Build & Deploy Storybook
+
 on:
   push:
+    paths:
+    - '/storybook-react-native-web-example/src/.storybook/**'
+    - '/storybook-react-native-web-example/src/components/**'
     branches:
       - master
 jobs:
@@ -9,10 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install and Build 🔧
-        # This needs an Access Token stored as "GH_TOKEN" 👇
         run: |
           cd storybook-react-native-web-example
           yarn install
+          yarn build-storybook
           yarn deploy-storybook -- --ci
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
