@@ -1,25 +1,18 @@
-name: Build and Deploy
-on: 
+name: Build & Deploy Storybook
+on:
   push:
-    paths: ["stories/**", "src/components/**"] # Trigger the action only when files change in the folders defined here
+    branches:
+      - master
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-        with:
-          persist-credentials: false
+      - uses: actions/checkout@v2
       - name: Install and Build 🔧
+        # This needs an Access Token stored as "GH_TOKEN" 👇
         run: |
-          yarn install
           cd storybook-react-native-web-example
-          yarn build-storybook
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main # The branch the action should deploy to.
-          FOLDER: storybook-react-native-web-example/docs-build # The folder that the build-storybook script generates files.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
-          TARGET_FOLDER: docs # The folder that we serve our Storybook files from
+          yarn install
+          yarn deploy-storybook -- --ci
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
