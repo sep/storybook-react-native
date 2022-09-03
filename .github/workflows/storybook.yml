@@ -2,9 +2,6 @@ name: Build & Deploy Storybook
 
 on:
   push:
-    paths:
-    - '/storybook-react-native-web-example/src/.storybook/**'
-    - '/storybook-react-native-web-example/src/components/**'
     branches:
       - main
 jobs:
