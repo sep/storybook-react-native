@@ -9,12 +9,14 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o docs-build -s ./src/components/assets"
+    "build-storybook": "build-storybook -o docs-build -s ./src/components/assets",
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "dependencies": {
     "@expo/html-elements": "^0.1.0",
     "@storybook/storybook-deployer": "^2.8.12",
     "babel-plugin-react-native-web": "^0.17.7",
+    "gh-pages": "^4.0.0",
     "native-base": "^3.4.3",
     "react": "17.0.2",
     "react-dom": "^17.0.2",
