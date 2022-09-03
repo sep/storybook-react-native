@@ -25,7 +25,7 @@ export function AppBar() {
             }
           />
           <Text color="white" fontSize={20} fontWeight="bold">
-            Home
+            SEP
           </Text>
         </HStack>
         <HStack space={2}>

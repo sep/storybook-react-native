@@ -16,5 +16,5 @@ export default {
 } as ComponentMeta<typeof Box>;
 
 export const Basic = {
-  args: {},
+  args: {text: "Hello World"},
 };
